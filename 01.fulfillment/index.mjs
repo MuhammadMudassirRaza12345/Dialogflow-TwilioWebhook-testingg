@@ -1,13 +1,14 @@
 import express from "express";
 import morgan from "morgan";
 import { WebhookClient } from 'dialogflow-fulfillment';
-import bodyParser from "body-parser";
+// import bodyParser from "body-parser";
 import twilio from "twilio";
 
 
 const app = express();
-app.use(express.json());
-app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
+// app.use(express.json());
+app.use(express.urlencoded({ extended: true}))
+// app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 app.use(morgan("dev"));
 const PORT = process.env.PORT || 3000;
 
